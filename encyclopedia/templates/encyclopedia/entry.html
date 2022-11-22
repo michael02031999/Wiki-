@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %} {% block title %} Entry
+{% endblock %} {% block body %} {{ entry|safe }}
+
+<form action="edit_markdown" method="GET">
+  {% csrf_token %}
+  <input
+    style="display: none"
+    name="path"
+    value="{{request.path }}"
+  />
+  <a href="{% url 'edit_markdown' %}" class="link-primary"
+    ><input type="submit" value="Edit Markdown" />
+  </a>
+  <!-- <label style="display: none" name="path"
+    >{{ request.path }}</label
+  > -->
+</form>
+
+{% endblock %} x

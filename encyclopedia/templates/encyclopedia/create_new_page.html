@@ -1,0 +1,55 @@
+{% extends "encyclopedia/layout.html" %} {% block title %} Create
+New Page Results {% endblock %} {% block body %}
+
+<div class="container p-3">
+  <!--  <div class="alert alert-danger w-75 text-center" role="alert">
+    <p>{{ Warning }}</p>
+  </div> -->
+
+  <div
+    class="
+      alert alert alert-danger alert-dismissible
+      show
+      fade
+      w-75
+      text-center
+    "
+    id="alert_notification"
+    role="alert"
+  >
+    {{ Warning }}
+  </div>
+
+  <h1 id="newpageHeading">Create a new page!</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3 w-50">
+      <label for="title" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Name of Entry"
+        name="title"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"
+        >Please Enter Your Markdown For Your Post</label
+      >
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="16"
+        name="textarea"
+        style="height: 400px"
+      ></textarea>
+    </div>
+
+    <button style="background-color: lightskyblue" type="submit">
+      Save
+    </button>
+  </form>
+</div>
+
+{% endblock %}

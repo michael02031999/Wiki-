@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %} {% block title %} Error
+{% endblock %} {% block body %} {% load static %}
+
+<div id="errorImageBorder">
+  <img
+    class="errorImage"
+    src="{% static '/Images/error.webp' %}"
+  />
+</div>
+
+<h1 class="errorText">
+  The url you have tried to access does not exist!
+</h1>
+
+<link
+  href="{% static 'encyclopedia/styles.css' %}"
+  rel="stylesheet"
+/>
+
+{% endblock %}
